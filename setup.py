@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(name='spexod',
-      version='0.4.0',
+      version='0.1.0',
       description='Community tools for SpExoDisks (spexodisks.com)',
       author='Caleb Wheeler',
       author_email='chw3k5@gmail.com',
