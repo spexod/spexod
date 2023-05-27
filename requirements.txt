@@ -1,2 +1,5 @@
 numpy
 astropy
+requests
+
+setuptools~=65.6.3
