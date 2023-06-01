@@ -6,6 +6,7 @@ instead this package will allow users to connect to the SpExoDisks database dire
 """
 
 import requests
+import re
 
 server = 'https://spexodisks.com/api/'
 
@@ -43,6 +44,7 @@ def get_star_aliases():
 def find_spectra(alias=None):
     aliases = get_star_aliases()
     aliasesandhandles = {}
+    possibleAliases = []
 
     alias = alias.lower().strip()
 
@@ -53,8 +55,11 @@ def find_spectra(alias=None):
         print("Please provide an object name to search for.")
         return
     if alias not in aliasesandhandles.keys():
-        print("Object not found in database.")
-        return
+        for i in aliasesandhandles.keys():
+            if alias in i:
+                possibleAliases.append(i)
+        return print(f"Found {len(possibleAliases)} possible aliases for {alias}: {possibleAliases} \n"
+                     f"Choose one of these aliases to search for and type it in verbatim.")
     else:
         return aliasesandhandles[alias]
 
@@ -79,9 +84,21 @@ def get_all_spectra_handles(spexodisks_handle: str) -> list:
 
 
 def get_wavelengths(handle: str) -> dict:
-    url = server + handle + '/'
+    url = server + handle.lower() + '/'
     response = requests.get(url)
-    return response.json()
+    return response.json()['wavelength_um']
+
+
+def get_fluxes(handle: str) -> dict:
+    url = server + handle.lower() + '/'
+    response = requests.get(url)
+    return response.json()['flux']
+
+
+def get_flux_errors(handle: str) -> dict:
+    url = server + handle.lower() + '/'
+    response = requests.get(url)
+    return response.json()['flux_error']
 
 
 if __name__ == "__main__":
@@ -92,7 +109,9 @@ if __name__ == "__main__":
     # print(get_curated())
     # print(get_spectra())
     # print(get_star_aliases())
-    # find_spectra('[C91] IRS 1')
-    # print(get_data_from_handle('leftsqbracketc91rightsqbracket_irs_1'))
+    # find_spectra('IRS')
+    # print(get_curated_data('leftsqbracketc91rightsqbracket_irs_1'))
     # print(get_all_spectra_handles('IRAS_08470minus4321'))
-    print(get_wavelengths('crires_2254nm_2356nm_IRAS_08470minus4321'))
+    # print(get_wavelengths('crires_2254nm_2356nm_IRAS_08470minus4321'))
+    # print(get_fluxes('crires_2254nm_2356nm_IRAS_08470minus4321'))
+    print(get_flux_errors('crires_2254nm_2356nm_IRAS_08470minus4321'))
