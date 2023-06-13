@@ -6,47 +6,65 @@ instead this package will allow users to connect to the SpExoDisks database dire
 """
 
 import requests
-import re
 
 server = 'https://spexodisks.com/api/'
 
 
-def get_available_isotopologues():
+def get_available_isotopologues() -> dict:
+    """
+    Returns a dictionary of available isotopologues and their properties
+    """
     url = server + 'available_isotopologues/'
     response = requests.get(url)
     return response.json()
 
 
-def get_params_and_units():
+def get_params_and_units() -> dict:
+    """
+    Returns a dictionary of available parameters and units
+    """
     url = server + 'available_params_and_units/'
     response = requests.get(url)
     return response.json()
 
 
-def get_curated():
+def get_curated() -> dict:
+    """
+    Returns a dictionary of curated data and corresponding handles
+    """
     url = server + 'curated/'
     response = requests.get(url)
     return response.json()
 
 
-def get_spectra():
+def get_spectra() -> dict:
+    """
+    Returns a dictionary of available spectra
+    """
     url = server + 'spectra/'
     response = requests.get(url)
     return response.json()
 
 
-def get_star_aliases():
+def get_star_aliases() -> dict:
+    """
+    Returns a dictionary of star aliases and corresponding handles associated with alias
+    """
     url = server + 'objectnamealiases/'
     response = requests.get(url)
     return response.json()
 
 
-def find_spectra(alias=None):
+def find_spectra(alias=None) -> dict:
+    """
+    Returns a dictionary of spectra associated with a given alias
+    """
     aliases = get_star_aliases()
     aliasesandhandles = {}
     possibleAliases = []
 
     alias = alias.lower().strip()
+    # Use a dictionary to map aliases to handles
 
     for i in aliases:
         aliasesandhandles[i['alias'].lower().strip()] = i['spexodisks_handle'].lower().strip()
@@ -65,6 +83,9 @@ def find_spectra(alias=None):
 
 
 def get_curated_data(handle: str) -> dict:
+    """
+    Returns a dictionary of curated data for a given handle
+    """
     curated = get_curated()
 
     for i in curated:
@@ -74,6 +95,9 @@ def get_curated_data(handle: str) -> dict:
 
 
 def get_all_spectra_handles(spexodisks_handle: str) -> list:
+    """
+    Returns a list of all spectra handles for a given star
+    """
     spectra = get_spectra()
     handles = []
     for i in spectra:
@@ -84,21 +108,36 @@ def get_all_spectra_handles(spexodisks_handle: str) -> list:
 
 
 def get_wavelengths(handle: str) -> dict:
+    """ Returns a dictionary of wavelengths for a given handle"""
     url = server + handle.lower() + '/'
     response = requests.get(url)
     return response.json()['wavelength_um']
 
 
-def get_fluxes(handle: str) -> dict:
+def get_fluxes(handle: str) -> tuple:
+    """ Returns a tuple of fluxes and flux errors for a given handle"""
     url = server + handle.lower() + '/'
     response = requests.get(url)
-    return response.json()['flux']
+    return response.json()['flux'], response.json()['flux_error']
 
 
-def get_flux_errors(handle: str) -> dict:
-    url = server + handle.lower() + '/'
-    response = requests.get(url)
-    return response.json()['flux_error']
+def get_stars_from_file(filename: str) -> list:
+    """ Returns a list of stars from a given file"""
+    with open(filename, 'r') as f:
+        stars = f.readlines()
+    stars = [i.strip() for i in stars]
+    return stars
+
+
+def create_spectra_file(stars: list) -> None:
+    """ Creates a file with all spectra handles for a given list of stars"""
+    for star in stars:
+        print(f"Getting spectra for {star}")
+        star = star.lower().strip()
+        spectra = get_all_spectra_handles(star)
+        with open(f'{star}_spectra.txt', 'w') as f:
+            for spectrum in spectra:
+                f.write(f"{spectrum['spexodisks_handle']}\n")
 
 
 if __name__ == "__main__":
@@ -113,5 +152,8 @@ if __name__ == "__main__":
     # print(get_curated_data('leftsqbracketc91rightsqbracket_irs_1'))
     # print(get_all_spectra_handles('IRAS_08470minus4321'))
     # print(get_wavelengths('crires_2254nm_2356nm_IRAS_08470minus4321'))
-    # print(get_fluxes('crires_2254nm_2356nm_IRAS_08470minus4321'))
-    print(get_flux_errors('crires_2254nm_2356nm_IRAS_08470minus4321'))
+    # print(get_fluxes('crires_2254nm_2356nm_IRAS_08470minus4321')[1])
+    # print(get_flux_errors('crires_2254nm_2356nm_IRAS_08470minus4321'))
+    # print(get_stars_from_file('test.txt'))
+    stars = get_stars_from_file('test.txt')
+    create_spectra_file(stars)
