@@ -6,6 +6,7 @@ instead this package will allow users to connect to the SpExoDisks database dire
 """
 
 import requests
+import pandas as pd
 
 server = 'https://spexodisks.com/api/'
 
@@ -96,7 +97,7 @@ def get_curated_data(handle: str) -> dict:
 
 def get_all_spectra_handles(spexodisks_handle: str) -> list:
     """
-    Returns a list of all spectra handles for a given star
+    Returns a list of all spectra handles for a given star/alias
     """
     spectra = get_spectra()
     handles = []
@@ -123,21 +124,32 @@ def get_fluxes(handle: str) -> tuple:
 
 def get_stars_from_file(filename: str) -> list:
     """ Returns a list of stars from a given file"""
-    with open(filename, 'r') as f:
-        stars = f.readlines()
-    stars = [i.strip() for i in stars]
-    return stars
+    df = pd.read_csv(filename, sep=",")
+    return df.columns.tolist()
 
 
 def create_spectra_file(stars: list) -> None:
     """ Creates a file with all spectra handles for a given list of stars"""
+    # Get all spectra handles for each star
+    star_spectra = {}
     for star in stars:
-        print(f"Getting spectra for {star}")
-        star = star.lower().strip()
-        spectra = get_all_spectra_handles(star)
-        with open(f'{star}_spectra.txt', 'w') as f:
-            for spectrum in spectra:
-                f.write(f"{spectrum['spexodisks_handle']}\n")
+        spectra = find_spectra(star)
+        star_spectra[star] = get_all_spectra_handles(spectra)
+
+    for k,v in star_spectra.items():
+        df = pd.DataFrame(v)
+        df.to_csv(f"{k}.csv", index=False)
+
+    # spectrum_handles = {}
+    # for k,v in star_spectra.items():
+    #     for i in v:
+    #         spectrum_handles[i['spexodisks_handle']] = i['spexodisks_handle']
+    #
+    # print(spectrum_handles)
+
+
+
+    # From spectra handles, get wavelengths and fluxes
 
 
 if __name__ == "__main__":
