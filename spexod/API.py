@@ -7,6 +7,8 @@ instead this package will allow users to connect to the SpExoDisks database dire
 
 import requests
 import pandas as pd
+import os
+import matplotlib.plplot as plt
 
 server = 'https://spexodisks.com/api/'
 
@@ -136,25 +138,29 @@ def create_spectra_file(stars: list) -> None:
         spectra = find_spectra(star)
         star_spectra[star] = get_all_spectra_handles(spectra)
 
-    for k,v in star_spectra.items():
+    # Create a folder for each star
+    for k, v in star_spectra.items():
+        # Create a folder for each key
+        if not os.path.exists(k):
+            os.makedirs(k)
+        os.chdir(k)
+        # For each value, find from API and write to csv
+        for i in v:
+            wavelengths = get_wavelengths(i['spectrum_handle'])
+            fluxes, flux_errors = get_fluxes(i['spectrum_handle'])
+            print(f"Writing {i['spexodisks_handle']}.csv")
+            print(f"Found {len(wavelengths)} wavelengths and {len(fluxes)} fluxes for {i['spexodisks_handle']}")
+            df = pd.DataFrame({'wavelength_um': wavelengths, 'flux': fluxes, 'flux_error': flux_errors})
+            df.to_csv(f"{i['spectrum_handle']}.csv", index=False)
+        # Create a csv file for each key
         df = pd.DataFrame(v)
         df.to_csv(f"{k}.csv", index=False)
-
-    # spectrum_handles = {}
-    # for k,v in star_spectra.items():
-    #     for i in v:
-    #         spectrum_handles[i['spexodisks_handle']] = i['spexodisks_handle']
-    #
-    # print(spectrum_handles)
-
-
-
-    # From spectra handles, get wavelengths and fluxes
+        os.chdir("..")
 
 
 if __name__ == "__main__":
-    # print("This file is not meant to be run directly. Please import spexod instead.")
-    # exit(1)
+    print("This file is not meant to be run directly. Please import spexod instead.")
+    exit(1)
     # print(get_available_isotopologues())
     # print(get_params_and_units())
     # print(get_curated())
@@ -167,5 +173,5 @@ if __name__ == "__main__":
     # print(get_fluxes('crires_2254nm_2356nm_IRAS_08470minus4321')[1])
     # print(get_flux_errors('crires_2254nm_2356nm_IRAS_08470minus4321'))
     # print(get_stars_from_file('test.txt'))
-    stars = get_stars_from_file('test.txt')
-    create_spectra_file(stars)
+    # stars = get_stars_from_file('test.txt')
+    # create_spectra_file(stars)
