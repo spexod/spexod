@@ -4,14 +4,15 @@ API tool for SpExoDisks
 This is meant to be an alternative to downloading data from SpExoDisks.com,
 instead this package will allow users to connect to the SpExoDisks database directly w/ Python.
 """
+from typing import List
 
-import requests
+import requests, zipfile, io
 import pandas as pd
 import os
-import matplotlib.plplot as plt
+import matplotlib.pyplot as plt
 
 server = 'https://spexodisks.com/api/'
-
+# https://spexodisks.com/api/datadownload/?spectra=
 
 def get_available_isotopologues() -> dict:
     """
@@ -158,9 +159,40 @@ def create_spectra_file(stars: list) -> None:
         os.chdir("..")
 
 
+def login():
+    """
+    Logs into the spexodisks database
+    """
+    access = False
+    while not access:
+        username = input("Please enter your username: ")
+        password = input("Please enter your password: ")
+        url = server + 'users/token/'
+        response = requests.post(url, json={'email': username, 'password': password})
+        if response.status_code == 200:
+            print("Login successful.")
+            access = True
+            return response.json()
+        else:
+            print("Login failed. Please try again.")
+
+
+def download_spectrum(spectra: List) -> None:
+    """
+    Downloads a spectrum from the spexodisks database
+    """
+    accessToken = login()['access']
+    url = server + 'datadownload/?spectra='
+    for i in spectra:
+        url += i + '%'
+    r = requests.get(url, headers={'Authorization': 'Bearer ' + accessToken})
+    z = zipfile.ZipFile(io.BytesIO(r.content))
+    z.extractall("spectra") # extract to folder
+
+
 if __name__ == "__main__":
-    print("This file is not meant to be run directly. Please import spexod instead.")
-    exit(1)
+    # print("This file is not meant to be run directly. Please import spexod instead.")
+    # exit(1)
     # print(get_available_isotopologues())
     # print(get_params_and_units())
     # print(get_curated())
@@ -175,3 +207,6 @@ if __name__ == "__main__":
     # print(get_stars_from_file('test.txt'))
     # stars = get_stars_from_file('test.txt')
     # create_spectra_file(stars)
+    # login()
+    spectra_list = ['crires_3657nm_3750nm_leftsqbracketc91rightsqbracket_irs_1']
+    download_spectrum(spectra_list)
