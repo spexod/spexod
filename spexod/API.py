@@ -9,10 +9,10 @@ from typing import List
 import requests, zipfile, io
 import pandas as pd
 import os
-import matplotlib.pyplot as plt
+import plotly.express as px
 
 server = 'https://spexodisks.com/api/'
-# https://spexodisks.com/api/datadownload/?spectra=
+
 
 def get_available_isotopologues() -> dict:
     """
@@ -187,12 +187,21 @@ def download_spectrum(spectra: List) -> None:
         url += i + '%'
     r = requests.get(url, headers={'Authorization': 'Bearer ' + accessToken})
     z = zipfile.ZipFile(io.BytesIO(r.content))
-    z.extractall("spectra") # extract to folder
+    z.extractall("spectra")  # extract to folder
+
+
+def plot_spectra(wavelength, flux):
+    """
+    Plots a spectrum
+    """
+    df = pd.DataFrame({'wavelength_um': wavelength, 'flux': flux})
+    fig = px.line(df, x='wavelength_um', y='flux')
+    fig.show()
 
 
 if __name__ == "__main__":
-    # print("This file is not meant to be run directly. Please import spexod instead.")
-    # exit(1)
+    print("This file is not meant to be run directly. Please import spexod instead.")
+    exit(1)
     # print(get_available_isotopologues())
     # print(get_params_and_units())
     # print(get_curated())
@@ -208,5 +217,9 @@ if __name__ == "__main__":
     # stars = get_stars_from_file('test.txt')
     # create_spectra_file(stars)
     # login()
-    spectra_list = ['crires_3657nm_3750nm_leftsqbracketc91rightsqbracket_irs_1']
-    download_spectrum(spectra_list)
+    # spectra_list = ['crires_3657nm_3750nm_leftsqbracketc91rightsqbracket_irs_1']
+    # download_spectrum(spectra_list)
+    # spectra = 'crires_3657nm_3750nm_leftsqbracketc91rightsqbracket_irs_1'
+    # wavelengths = get_wavelengths(spectra)
+    # fluxes, flux_errors = get_fluxes(spectra)
+    # plot_spectra(wavelengths, fluxes)
