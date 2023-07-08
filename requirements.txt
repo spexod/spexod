@@ -2,4 +2,6 @@ numpy
 astropy
 requests
 
-setuptools~=65.6.3
+setuptools
+pandas
+plotly

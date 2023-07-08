@@ -84,7 +84,7 @@ def get_star_aliases() -> dict:
         return None
 
 
-def find_spectra(alias=None) -> dict:
+def find_spectra_handle(alias=None) -> dict:
     """
     Returns a dictionary of spectra associated with a given alias.
     """
@@ -192,7 +192,7 @@ def create_spectra_file(stars: list) -> None:
     # Get all spectra handles for each star
     star_spectra = {}
     for star in stars:
-        spectra = find_spectra(star)
+        spectra = find_spectra_handle(star)
         star_spectra[star] = get_all_spectra_handles(spectra)
 
     # Create a folder for each star
@@ -275,23 +275,4 @@ def plot_spectra(wavelength, flux) -> None:
 if __name__ == "__main__":
     print("This file is not meant to be run directly. Please import spexod instead.")
     exit(1)
-    # print(get_available_isotopologues())
-    # print(get_params_and_units())
-    # print(get_curated())
-    # print(get_spectra())
-    # print(get_star_aliases())
-    # find_spectra('IRS')
-    # print(get_curated_data('leftsqbracketc91rightsqbracket_irs_1'))
-    # print(get_all_spectra_handles('IRAS_08470minus4321'))
-    # print(get_wavelengths('crires_2254nm_2356nm_IRAS_08470minus4321'))
-    # print(get_fluxes('crires_2254nm_2356nm_IRAS_08470minus4321'))
-    # print(get_stars_from_file('test.txt'))
-    # stars = get_stars_from_file('test.txt')
-    # create_spectra_file(stars)
-    # login()
-    # spectra_list = ['crires_3657nm_3750nm_leftsqbracketc91rightsqbracket_irs_1']
-    # download_spectrum(spectra_list)
-    # spectra = 'crires_3657nm_3750nm_leftsqbracketc91rightsqbracket_irs_1'
-    # wavelengths = get_wavelengths(spectra)
-    # fluxes, flux_errors = get_fluxes(spectra)
-    # plot_spectra(wavelengths, fluxes)
+
