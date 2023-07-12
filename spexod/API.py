@@ -4,12 +4,14 @@ API tool for SpExoDisks
 This is meant to be an alternative to downloading data from SpExoDisks.com,
 instead this package will allow users to connect to the SpExoDisks database directly w/ Python.
 """
+import os
 from typing import List
 
-import requests, zipfile, io
+import io
 import pandas as pd
-import os
 import plotly.express as px
+import requests
+import zipfile
 
 SERVER_URL = 'https://spexodisks.com/api/'
 
@@ -214,6 +216,7 @@ def create_spectra_file(stars: list) -> None:
         df.to_csv(f"{star}.csv", index=False)
         os.chdir("..")
 
+
 def login() -> dict:
     """
     Logs into the SpExoDisks database.
@@ -275,4 +278,3 @@ def plot_spectra(wavelength, flux) -> None:
 if __name__ == "__main__":
     print("This file is not meant to be run directly. Please import spexod instead.")
     exit(1)
-
