@@ -6,9 +6,9 @@ from setuptools import setup, find_packages
 md_fit_read_path = os.path.join('spexod', 'FITSREAD.md')
 
 setup(name='spexod',
-      version='0.1.1',
+      version='0.2.0',
       description='Community tools for SpExoDisks (spexodisks.com)',
-      author='Caleb Wheeler',
+      author='Isaac Jaramillo, Caleb Wheeler',
       author_email='chw3k5@gmail.com',
       packages=find_packages(),
       url="https://github.com/spexod/spexod",
