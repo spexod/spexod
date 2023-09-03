@@ -158,4 +158,4 @@ static directory for us that contains our documentation's website.
 
 See [here](https://www.sphinx-doc.org/en/master/usage/quickstart.html) for additional documentation and guidance.
 
-Once ready to deploy and have built new static HTML files, copy the contents of `./Sphinx/docs/build/html/` into `./docs/``
+Once ready to deploy and have built new static HTML files, copy the contents of `./Sphinx/docs/build/html` into `./docs`
