@@ -144,3 +144,18 @@ With a your chosen python environment active and in the folder `/spexod/`
 (where `setup.py` file is located ), you can install with `pip` via:
 
     pip install .
+
+## Contributing to documentation
+In order to get started, install Python packages Sphinx and pydata-sphinx-theme. 
+To make the process a little easier we have included `sphinx_requirements.txt` in the 
+`docs` folder. Use the pip command to install as such:
+
+```pip install -r sphinx_requirements.txt``` 
+
+From there, we can navigate to the `./Sphinx/docs/` directory. 
+We can use `make html` to build the application. Once built, we can see that Sphinx generates a `build/html/` 
+static directory for us that contains our documentation's website.
+
+See [here](https://www.sphinx-doc.org/en/master/usage/quickstart.html) for additional documentation and guidance.
+
+Once ready to deploy and have built new static HTML files, copy the contents of `./Sphinx/docs/build/html/'into `./docs/`
