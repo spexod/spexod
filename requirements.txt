@@ -1,7 +1,9 @@
 numpy
 astropy
 requests
-
 setuptools
 pandas
 plotly
+pandas
+plotly
+requests

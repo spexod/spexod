@@ -15,11 +15,12 @@ Welcome to Spexod's documentation!
    This documentation is still a work in progress. If you have any questions,
    please feel free to open an issue on the GitHub repository
 
-   https://github.com/spexod/spexod/
+   `github.com/spexod/spexod <https://github.com/spexod/spexod/>`_
 
-**SpExod** is a Python library that allows users to connect to the SpExoDisks API aims to provide users with a
-convenient and efficient way to access data from a particular source. It offers a set of functions and methods
-that enable users to interact with the data programmatically, making it easier to retrieve and manipulate
+**spexod** is a Python package that provides a Python interface to access the
+SpExoDisks API `spexodisks.com/api/ <https://spexodisks.com/api/>`_. The project is provides users with a
+convenient access data for a particular source.
+It offers a set of functions  making it easier to retrieve and manipulate
 the information as needed. One of the key advantages of using the Python API is its ability to access more data than
 what is typically visible on the explore data page or user interface. While the explore data page may present a
 limited subset of the available data, the Python API allows users to query and retrieve a broader range of information.
@@ -40,7 +41,11 @@ Contents
 
    dataflow
    usage
-   api
+
+.. autosummary::
+   :toctree: generated
+
+   spexod.api
 
 Indices and tables
 ==================

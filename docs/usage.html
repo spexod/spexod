@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Usage &#8212; Spexod 1.0 documentation</title>
+    <title>Usage &#8212; Spexod 1.1 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -31,16 +31,17 @@
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="_static/documentation_options.js?v=56dcb7b8"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API" href="api.html" />
+    <link rel="next" title="spexod.api" href="generated/spexod.api.html" />
     <link rel="prev" title="DataFlow" href="dataflow.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -52,6 +53,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -92,9 +102,11 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -103,18 +115,19 @@
   
   
   
-    <p class="title logo__title">Spexod 1.0 documentation</p>
+  
+    <p class="title logo__title">Spexod 1.1 documentation</p>
   
 </a></div>
     
   </div>
   
-  
   <div class="col-lg-9 navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
+        <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -138,8 +151,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="api.html">
-                        API
+                      <a class="nav-link nav-internal" href="generated/spexod.api.html">
+                        spexod.api
                       </a>
                     </li>
                 
@@ -153,23 +166,27 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -180,18 +197,21 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -211,7 +231,8 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
+          <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -235,8 +256,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="api.html">
-                        API
+                      <a class="nav-link nav-internal" href="generated/spexod.api.html">
+                        spexod.api
                       </a>
                     </li>
                 
@@ -250,12 +271,13 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -288,8 +310,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="index.html" class="nav-link" aria-label="Home">
@@ -318,15 +340,17 @@ document.write(`
 <section id="installation">
 <span id="id1"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>To use SpExod, first install it using pip:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>spexod
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install spexod</span>
 </pre></div>
 </div>
 <p>Or try one of the other installation methods.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>spexod
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conda install -c conda-forge spexod</span>
 </pre></div>
 </div>
 <p>Or</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/spexod/spexod cd spexod pip install .</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/spexod/spexod</span>
+<span class="go">cd spexod</span>
+<span class="go">pip install .</span>
 </pre></div>
 </div>
 </section>
@@ -341,8 +365,8 @@ document.write(`
 and <code class="docutils literal notranslate"><span class="pre">get_star_aliases()</span></code>. Each of these functions returns a list of dictionaries, where each dictionary
 represents a row in the database. The keys of the dictionaries are the column names of the database,</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_available_isotopologues">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_available_isotopologues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.get_available_isotopologues" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_available_isotopologues">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_available_isotopologues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.get_available_isotopologues" title="Link to this definition">#</a></dt>
 <dd><p>Returns a list of dictionaries of available isotopologues and their properties</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -358,8 +382,8 @@ represents a row in the database. The keys of the dictionaries are the column na
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_params_and_units">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_params_and_units</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.get_params_and_units" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_params_and_units">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_params_and_units</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.get_params_and_units" title="Link to this definition">#</a></dt>
 <dd><p>Returns a list dictionaries of available parameters and units.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -375,8 +399,8 @@ represents a row in the database. The keys of the dictionaries are the column na
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_curated">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_curated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.get_curated" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_curated">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_curated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.get_curated" title="Link to this definition">#</a></dt>
 <dd><p>Returns a list of dictionaries of ALL curated data and corresponding handles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -392,8 +416,8 @@ represents a row in the database. The keys of the dictionaries are the column na
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_spectra">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_spectra</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.get_spectra" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_spectra">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_spectra</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.get_spectra" title="Link to this definition">#</a></dt>
 <dd><p>Returns a dictionary of available spectra.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -409,8 +433,8 @@ represents a row in the database. The keys of the dictionaries are the column na
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_star_aliases">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_star_aliases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.get_star_aliases" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_star_aliases">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_star_aliases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.get_star_aliases" title="Link to this definition">#</a></dt>
 <dd><p>Returns a dictionary of star aliases and corresponding handles associated with alias.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -435,8 +459,8 @@ and also informs you of other possible aliases. Incase it does not select the co
 copy and paste the alias you want to ensure you get the correct alias(es).</p>
 </div>
 <dl class="py function">
-<dt class="sig sig-object py" id="API.find_spectra_handle">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">find_spectra_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.find_spectra_handle" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.find_spectra_handle">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">find_spectra_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.find_spectra_handle" title="Link to this definition">#</a></dt>
 <dd><p>This function allows a user to find the spectra handle for a given star alias.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -452,8 +476,8 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_curated_data">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_curated_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.get_curated_data" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_curated_data">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_curated_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.get_curated_data" title="Link to this definition">#</a></dt>
 <dd><p>Given a handle, returns a list of SELECTED dictionaries of curated data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -469,8 +493,8 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_all_spectra_handles">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_all_spectra_handles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spexodisks_handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.get_all_spectra_handles" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_all_spectra_handles">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_all_spectra_handles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spexodisks_handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.get_all_spectra_handles" title="Link to this definition">#</a></dt>
 <dd><p>Returns a list of all spectra handles for a given star/alias.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -483,8 +507,8 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_wavelengths">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_wavelengths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.get_wavelengths" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_wavelengths">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_wavelengths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.get_wavelengths" title="Link to this definition">#</a></dt>
 <dd><p>Retrieves a dictionary of wavelengths for a given handle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -503,8 +527,8 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_fluxes">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_fluxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#API.get_fluxes" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_fluxes">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_fluxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#spexod.api.get_fluxes" title="Link to this definition">#</a></dt>
 <dd><p>Retrieves fluxes and flux errors for a given handle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -526,8 +550,8 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
 <section id="misc-functions">
 <h2>Misc Functions<a class="headerlink" href="#misc-functions" title="Link to this heading">#</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="API.get_stars_from_file">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_stars_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#API.get_stars_from_file" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.get_stars_from_file">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">get_stars_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#spexod.api.get_stars_from_file" title="Link to this definition">#</a></dt>
 <dd><p>Retrieves a list of stars from a given file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -552,8 +576,8 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.create_spectra_file">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">create_spectra_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#API.create_spectra_file" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.create_spectra_file">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">create_spectra_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#spexod.api.create_spectra_file" title="Link to this definition">#</a></dt>
 <dd><p>Creates a CSV file with all spectra handles for a given list of stars</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -566,8 +590,8 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.download_spectrum">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">download_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#API.download_spectrum" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.download_spectrum">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">download_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#spexod.api.download_spectrum" title="Link to this definition">#</a></dt>
 <dd><p>Downloads spectra from the SpExoDisks database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -580,8 +604,8 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="API.plot_spectra">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">plot_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#API.plot_spectra" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="spexod.api.plot_spectra">
+<span class="sig-prename descclassname"><span class="pre">spexod.api.</span></span><span class="sig-name descname"><span class="pre">plot_spectra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#spexod.api.plot_spectra" title="Link to this definition">#</a></dt>
 <dd><p>Plots a spectrum similar to the website.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -609,11 +633,10 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
               
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="dataflow.html"
@@ -625,18 +648,15 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
       </div>
     </a>
     <a class="right-next"
-       href="api.html"
+       href="generated/spexod.api.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">API</p>
+        <p class="prev-next-title">spexod.api</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -646,6 +666,7 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
@@ -653,32 +674,33 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-data">Retrieving Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_available_isotopologues"><code class="docutils literal notranslate"><span class="pre">get_available_isotopologues()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_params_and_units"><code class="docutils literal notranslate"><span class="pre">get_params_and_units()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_curated"><code class="docutils literal notranslate"><span class="pre">get_curated()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_spectra"><code class="docutils literal notranslate"><span class="pre">get_spectra()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_star_aliases"><code class="docutils literal notranslate"><span class="pre">get_star_aliases()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_available_isotopologues"><code class="docutils literal notranslate"><span class="pre">get_available_isotopologues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_params_and_units"><code class="docutils literal notranslate"><span class="pre">get_params_and_units()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_curated"><code class="docutils literal notranslate"><span class="pre">get_curated()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_spectra"><code class="docutils literal notranslate"><span class="pre">get_spectra()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_star_aliases"><code class="docutils literal notranslate"><span class="pre">get_star_aliases()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-spexodisks-database">Navigating the SpExoDisks Database</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.find_spectra_handle"><code class="docutils literal notranslate"><span class="pre">find_spectra_handle()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_curated_data"><code class="docutils literal notranslate"><span class="pre">get_curated_data()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_all_spectra_handles"><code class="docutils literal notranslate"><span class="pre">get_all_spectra_handles()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_wavelengths"><code class="docutils literal notranslate"><span class="pre">get_wavelengths()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_fluxes"><code class="docutils literal notranslate"><span class="pre">get_fluxes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.find_spectra_handle"><code class="docutils literal notranslate"><span class="pre">find_spectra_handle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_curated_data"><code class="docutils literal notranslate"><span class="pre">get_curated_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_all_spectra_handles"><code class="docutils literal notranslate"><span class="pre">get_all_spectra_handles()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_wavelengths"><code class="docutils literal notranslate"><span class="pre">get_wavelengths()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_fluxes"><code class="docutils literal notranslate"><span class="pre">get_fluxes()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misc-functions">Misc Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.get_stars_from_file"><code class="docutils literal notranslate"><span class="pre">get_stars_from_file()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.create_spectra_file"><code class="docutils literal notranslate"><span class="pre">create_spectra_file()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.download_spectrum"><code class="docutils literal notranslate"><span class="pre">download_spectrum()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#API.plot_spectra"><code class="docutils literal notranslate"><span class="pre">plot_spectra()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.get_stars_from_file"><code class="docutils literal notranslate"><span class="pre">get_stars_from_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.create_spectra_file"><code class="docutils literal notranslate"><span class="pre">create_spectra_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.download_spectrum"><code class="docutils literal notranslate"><span class="pre">download_spectrum()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spexod.api.plot_spectra"><code class="docutils literal notranslate"><span class="pre">plot_spectra()</span></code></a></li>
 </ul>
 </li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
+
   <div class="tocsection sourcelink">
     <a href="_sources/usage.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
@@ -699,8 +721,8 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -708,6 +730,7 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="copyright">
     
       © Copyright 2023, Isaac Jaramillo, Caleb Wheeler.
@@ -717,8 +740,9 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
 </div>
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>
@@ -726,10 +750,12 @@ copy and paste the alias you want to ensure you get the correct alias(es).</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>

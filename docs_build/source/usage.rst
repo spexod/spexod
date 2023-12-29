@@ -10,19 +10,21 @@ To use SpExod, first install it using pip:
 
 .. code-block:: console
 
-   (.venv) $ pip install spexod
+   pip install spexod
 
 Or try one of the other installation methods.
 
 .. code-block:: console
 
-   (.venv) $ conda install -c conda-forge spexod
+   conda install -c conda-forge spexod
 
 Or
 
 .. code-block:: console
 
-    git clone https://github.com/spexod/spexod cd spexod pip install .
+    git clone https://github.com/spexod/spexod
+    cd spexod
+    pip install .
 
 
 Retrieving Data
@@ -36,15 +38,15 @@ The following functions are used to retrieve almost all data from the database:
 and ``get_star_aliases()``. Each of these functions returns a list of dictionaries, where each dictionary
 represents a row in the database. The keys of the dictionaries are the column names of the database,
 
-.. autofunction:: API.get_available_isotopologues
+.. autofunction:: spexod.api.get_available_isotopologues
 
-.. autofunction:: API.get_params_and_units
+.. autofunction:: spexod.api.get_params_and_units
 
-.. autofunction:: API.get_curated
+.. autofunction:: spexod.api.get_curated
 
-.. autofunction:: API.get_spectra
+.. autofunction:: spexod.api.get_spectra
 
-.. autofunction:: API.get_star_aliases
+.. autofunction:: spexod.api.get_star_aliases
 
 Navigating the SpExoDisks Database
 ----------------------------------
@@ -55,18 +57,18 @@ Navigating the SpExoDisks Database
     and also informs you of other possible aliases. Incase it does not select the correct alias,
     copy and paste the alias you want to ensure you get the correct alias(es).
 
-.. autofunction:: API.find_spectra_handle
-.. autofunction:: API.get_curated_data
-.. autofunction:: API.get_all_spectra_handles
-.. autofunction:: API.get_wavelengths
-.. autofunction:: API.get_fluxes
+.. autofunction:: spexod.api.find_spectra_handle
+.. autofunction:: spexod.api.get_curated_data
+.. autofunction:: spexod.api.get_all_spectra_handles
+.. autofunction:: spexod.api.get_wavelengths
+.. autofunction:: spexod.api.get_fluxes
 
 Misc Functions
 --------------
-.. autofunction:: API.get_stars_from_file
-.. autofunction:: API.create_spectra_file
-.. autofunction:: API.download_spectrum
-.. autofunction:: API.plot_spectra
+.. autofunction:: spexod.api.get_stars_from_file
+.. autofunction:: spexod.api.create_spectra_file
+.. autofunction:: spexod.api.download_spectrum
+.. autofunction:: spexod.api.plot_spectra
 
 .. note::
 

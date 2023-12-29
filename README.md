@@ -1,6 +1,19 @@
 # spexod
 Community tools for **SpExoDisks** (**Sp**ectroscopy  of **Exo**planet **Disks**) data
 
+**SpExod** is a Python package that allows users to connect to the spexodisks.com API aims to provide users with a
+convenient and efficient way to access data from a particular source. It offers a set of functions and methods
+that enable users to interact with the data programmatically, making it easier to retrieve and manipulate
+the information as needed. One of the key advantages of using the Python API is its ability to access more data than
+what is typically visible on the explore data page or user interface. While the explore data page may present a
+limited subset of the available data, the Python API allows users to query and retrieve a broader range of information.
+This can be particularly useful for users who require comprehensive access to the data for analysis, research, or other
+purposes. Furthermore, the Python API allows users to access the data in its purest form, including any NULL or empty
+values that may exist. This means that users have direct access to the original data structure and can work with it as
+it is, without any modifications or preprocessing. This level of data integrity can be beneficial for advanced data
+analysis or when specific processing steps need to be performed on the data.
+
+
 https://github.com/spexod/spexod
 ## Quick Installation
 
@@ -152,10 +165,34 @@ To make the process a little easier we have included `sphinx_requirements.txt` i
 
 ```pip install -r sphinx_requirements.txt``` 
 
-From there, we can navigate to the `./Sphinx/docs/` directory. 
-We can use `make html` to build the application. Once built, we can see that Sphinx generates a `build/html/` 
+From there, we can navigate to the `docs_build` directory.
+
+```
+cd docs_build
+```
+
+
+We can use `make html` to build the application. 
+
+
+```
+make html
+```
+
+Once built, we can see that Sphinx generates a directory at `docs_build/build/html/` 
 static directory for us that contains our documentation's website.
+
+Click on `docs_build/build/html/index.html` to view the documentation as a website
+using a browser like Chrome or Firefox.
 
 See [here](https://www.sphinx-doc.org/en/master/usage/quickstart.html) for additional documentation and guidance.
 
-Once ready to deploy and have built new static HTML files, copy the contents of `./Sphinx/docs/build/html` into `./docs`
+Once ready to deploy and have built new static HTML files, copy the contents of `spexod/docs_build/build/html` 
+into `spexod/docs` and add a `.nojekyll` file to the `spexod/docs` directory.
+From this point, you can push the changes to the `spexod/docs` directory to GitHub and the documentation will be updated.
+
+```
+rm -rf ./docs/*
+cp -r ./docs_build/build/html/* ./docs
+touch docs/.nojekyll
+```

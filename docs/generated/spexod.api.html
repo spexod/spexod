@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>spexod &#8212; Spexod 1.0 documentation</title>
+    <title>spexod.api &#8212; Spexod 1.1 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -31,16 +31,17 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../_static/documentation_options.js?v=56dcb7b8"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/spexod';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/spexod.api';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="API" href="../api.html" />
+    <link rel="prev" title="Usage" href="../usage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -51,6 +52,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -91,9 +101,11 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
   
 
 <a class="navbar-brand logo" href="../index.html">
@@ -102,18 +114,19 @@
   
   
   
-    <p class="title logo__title">Spexod 1.0 documentation</p>
+  
+    <p class="title logo__title">Spexod 1.1 documentation</p>
   
 </a></div>
     
   </div>
   
-  
   <div class="col-lg-9 navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
+        <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -137,8 +150,8 @@
                 
 
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../api.html">
-                        API
+                      <a class="nav-link nav-internal" href="#">
+                        spexod.api
                       </a>
                     </li>
                 
@@ -152,23 +165,27 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -179,18 +196,21 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -201,7 +221,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -210,7 +230,8 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
+          <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -234,8 +255,8 @@ document.write(`
                 
 
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../api.html">
-                        API
+                      <a class="nav-link nav-internal" href="#">
+                        spexod.api
                       </a>
                     </li>
                 
@@ -249,12 +270,13 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -262,17 +284,6 @@ document.write(`
       </div>
     
   </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">spexod</a></li>
-</ul>
-</div>
-</nav></div>
-    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -298,18 +309,15 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">spexod</li>
+    <li class="breadcrumb-item active" aria-current="page">spexod.api</li>
   </ul>
 </nav>
 </div>
@@ -326,57 +334,57 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="module-spexod">
-<span id="spexod"></span><h1>spexod<a class="headerlink" href="#module-spexod" title="Link to this heading">#</a></h1>
+  <section id="module-spexod.api">
+<span id="spexod-api"></span><h1>spexod.api<a class="headerlink" href="#module-spexod.api" title="Link to this heading">#</a></h1>
 <p>API tool for SpExoDisks</p>
 <p>This is meant to be an alternative to downloading data from SpExoDisks.com,
 instead this package will allow users to connect to the SpExoDisks database directly w/ Python.</p>
 <p class="rubric">Functions</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_spectra_file</span></code>(stars)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../usage.html#spexod.api.create_spectra_file" title="spexod.api.create_spectra_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_spectra_file</span></code></a>(stars)</p></td>
 <td><p>Creates a CSV file with all spectra handles for a given list of stars</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_spectrum</span></code>(spectra)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../usage.html#spexod.api.download_spectrum" title="spexod.api.download_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_spectrum</span></code></a>(spectra)</p></td>
 <td><p>Downloads spectra from the SpExoDisks database.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_spectra_handle</span></code>([alias])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../usage.html#spexod.api.find_spectra_handle" title="spexod.api.find_spectra_handle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_spectra_handle</span></code></a>([alias])</p></td>
 <td><p>This function allows a user to find the spectra handle for a given star alias.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_all_spectra_handles</span></code>(spexodisks_handle)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_all_spectra_handles" title="spexod.api.get_all_spectra_handles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_all_spectra_handles</span></code></a>(spexodisks_handle)</p></td>
 <td><p>Returns a list of all spectra handles for a given star/alias.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_available_isotopologues</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_available_isotopologues" title="spexod.api.get_available_isotopologues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_available_isotopologues</span></code></a>()</p></td>
 <td><p>Returns a list of dictionaries of available isotopologues and their properties</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_curated</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_curated" title="spexod.api.get_curated"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_curated</span></code></a>()</p></td>
 <td><p>Returns a list of dictionaries of ALL curated data and corresponding handles.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_curated_data</span></code>(handle)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_curated_data" title="spexod.api.get_curated_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_curated_data</span></code></a>(handle)</p></td>
 <td><p>Given a handle, returns a list of SELECTED dictionaries of curated data.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_fluxes</span></code>(handle)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_fluxes" title="spexod.api.get_fluxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_fluxes</span></code></a>(handle)</p></td>
 <td><p>Retrieves fluxes and flux errors for a given handle.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params_and_units</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_params_and_units" title="spexod.api.get_params_and_units"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params_and_units</span></code></a>()</p></td>
 <td><p>Returns a list dictionaries of available parameters and units.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_spectra</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_spectra" title="spexod.api.get_spectra"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_spectra</span></code></a>()</p></td>
 <td><p>Returns a dictionary of available spectra.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_star_aliases</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_star_aliases" title="spexod.api.get_star_aliases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_star_aliases</span></code></a>()</p></td>
 <td><p>Returns a dictionary of star aliases and corresponding handles associated with alias.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stars_from_file</span></code>(filename)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_stars_from_file" title="spexod.api.get_stars_from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stars_from_file</span></code></a>(filename)</p></td>
 <td><p>Retrieves a list of stars from a given file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_wavelengths</span></code>(handle)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../usage.html#spexod.api.get_wavelengths" title="spexod.api.get_wavelengths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_wavelengths</span></code></a>(handle)</p></td>
 <td><p>Retrieves a dictionary of wavelengths for a given handle.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">login</span></code>()</p></td>
 <td><p>Log in as a user into the SpExoDisks database.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_spectra</span></code>(wavelength, flux)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../usage.html#spexod.api.plot_spectra" title="spexod.api.plot_spectra"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_spectra</span></code></a>(wavelength, flux)</p></td>
 <td><p>Plots a spectrum similar to the website.</p></td>
 </tr>
 </tbody>
@@ -388,25 +396,21 @@ instead this package will allow users to connect to the SpExoDisks database dire
               
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../api.html"
+       href="../usage.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">API</p>
+        <p class="prev-next-title">Usage</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -416,8 +420,9 @@ instead this package will allow users to connect to the SpExoDisks database dire
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+
   <div class="tocsection sourcelink">
-    <a href="../_sources/generated/spexod.rst.txt">
+    <a href="../_sources/generated/spexod.api.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
@@ -436,8 +441,8 @@ instead this package will allow users to connect to the SpExoDisks database dire
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -445,6 +450,7 @@ instead this package will allow users to connect to the SpExoDisks database dire
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="copyright">
     
       © Copyright 2023, Isaac Jaramillo, Caleb Wheeler.
@@ -454,8 +460,9 @@ instead this package will allow users to connect to the SpExoDisks database dire
 </div>
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>
@@ -463,10 +470,12 @@ instead this package will allow users to connect to the SpExoDisks database dire
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>

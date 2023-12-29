@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to Spexod’s documentation! &#8212; Spexod 1.0 documentation</title>
+    <title>Welcome to Spexod’s documentation! &#8212; Spexod 1.1 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -31,10 +31,11 @@
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="_static/documentation_options.js?v=56dcb7b8"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
@@ -51,6 +52,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -91,9 +101,11 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
   
 
 <a class="navbar-brand logo" href="#">
@@ -102,18 +114,19 @@
   
   
   
-    <p class="title logo__title">Spexod 1.0 documentation</p>
+  
+    <p class="title logo__title">Spexod 1.1 documentation</p>
   
 </a></div>
     
   </div>
   
-  
   <div class="col-lg-9 navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
+        <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -137,8 +150,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="api.html">
-                        API
+                      <a class="nav-link nav-internal" href="generated/spexod.api.html">
+                        spexod.api
                       </a>
                     </li>
                 
@@ -152,23 +165,27 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -179,18 +196,21 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -210,7 +230,8 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
+          <div class="navbar-item">
+<nav class="navbar-nav">
   <p class="sidebar-header-items__title"
      role="heading"
      aria-level="1"
@@ -234,8 +255,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="api.html">
-                        API
+                      <a class="nav-link nav-internal" href="generated/spexod.api.html">
+                        spexod.api
                       </a>
                     </li>
                 
@@ -249,12 +270,13 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -294,11 +316,12 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>This documentation is still a work in progress. If you have any questions,
 please feel free to open an issue on the GitHub repository</p>
-<p><a class="github reference external" href="https://github.com/spexod/spexod/">spexod/spexod</a></p>
+<p><a class="reference external" href="https://github.com/spexod/spexod/">github.com/spexod/spexod</a></p>
 </div>
-<p><strong>SpExod</strong> is a Python library that allows users to connect to the SpExoDisks API aims to provide users with a
-convenient and efficient way to access data from a particular source. It offers a set of functions and methods
-that enable users to interact with the data programmatically, making it easier to retrieve and manipulate
+<p><strong>spexod</strong> is a Python package that provides a Python interface to access the
+SpExoDisks API <a class="reference external" href="https://spexodisks.com/api/">spexodisks.com/api/</a>. The project is provides users with a
+convenient access data for a particular source.
+It offers a set of functions  making it easier to retrieve and manipulate
 the information as needed. One of the key advantages of using the Python API is its ability to access more data than
 what is typically visible on the explore data page or user interface. While the explore data page may present a
 limited subset of the available data, the Python API allows users to query and retrieve a broader range of information.
@@ -317,36 +340,39 @@ analysis or when specific processing steps need to be performed on the data.</p>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#retrieving-data">Retrieving Data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_available_isotopologues"><code class="docutils literal notranslate"><span class="pre">get_available_isotopologues()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_params_and_units"><code class="docutils literal notranslate"><span class="pre">get_params_and_units()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_curated"><code class="docutils literal notranslate"><span class="pre">get_curated()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_spectra"><code class="docutils literal notranslate"><span class="pre">get_spectra()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_star_aliases"><code class="docutils literal notranslate"><span class="pre">get_star_aliases()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_available_isotopologues"><code class="docutils literal notranslate"><span class="pre">get_available_isotopologues()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_params_and_units"><code class="docutils literal notranslate"><span class="pre">get_params_and_units()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_curated"><code class="docutils literal notranslate"><span class="pre">get_curated()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_spectra"><code class="docutils literal notranslate"><span class="pre">get_spectra()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_star_aliases"><code class="docutils literal notranslate"><span class="pre">get_star_aliases()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#navigating-the-spexodisks-database">Navigating the SpExoDisks Database</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.find_spectra_handle"><code class="docutils literal notranslate"><span class="pre">find_spectra_handle()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_curated_data"><code class="docutils literal notranslate"><span class="pre">get_curated_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_all_spectra_handles"><code class="docutils literal notranslate"><span class="pre">get_all_spectra_handles()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_wavelengths"><code class="docutils literal notranslate"><span class="pre">get_wavelengths()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_fluxes"><code class="docutils literal notranslate"><span class="pre">get_fluxes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.find_spectra_handle"><code class="docutils literal notranslate"><span class="pre">find_spectra_handle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_curated_data"><code class="docutils literal notranslate"><span class="pre">get_curated_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_all_spectra_handles"><code class="docutils literal notranslate"><span class="pre">get_all_spectra_handles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_wavelengths"><code class="docutils literal notranslate"><span class="pre">get_wavelengths()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_fluxes"><code class="docutils literal notranslate"><span class="pre">get_fluxes()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#misc-functions">Misc Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.get_stars_from_file"><code class="docutils literal notranslate"><span class="pre">get_stars_from_file()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.create_spectra_file"><code class="docutils literal notranslate"><span class="pre">create_spectra_file()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.download_spectrum"><code class="docutils literal notranslate"><span class="pre">download_spectrum()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="usage.html#API.plot_spectra"><code class="docutils literal notranslate"><span class="pre">plot_spectra()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.get_stars_from_file"><code class="docutils literal notranslate"><span class="pre">get_stars_from_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.create_spectra_file"><code class="docutils literal notranslate"><span class="pre">create_spectra_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.download_spectrum"><code class="docutils literal notranslate"><span class="pre">download_spectrum()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html#spexod.api.plot_spectra"><code class="docutils literal notranslate"><span class="pre">plot_spectra()</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="generated/API.html">API</a></li>
 </ul>
 </li>
 </ul>
 </div>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/spexod.api.html#module-spexod.api" title="spexod.api"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spexod.api</span></code></a></p></td>
+<td><p>API tool for SpExoDisks</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="indices-and-tables">
@@ -363,11 +389,10 @@ analysis or when specific processing steps need to be performed on the data.</p>
               
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
        href="dataflow.html"
@@ -378,10 +403,7 @@ analysis or when specific processing steps need to be performed on the data.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -391,13 +413,16 @@ analysis or when specific processing steps need to be performed on the data.</p>
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to Spexod’s documentation!</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
@@ -406,6 +431,7 @@ analysis or when specific processing steps need to be performed on the data.</p>
   </nav></div>
 
   <div class="sidebar-secondary-item">
+
   <div class="tocsection sourcelink">
     <a href="_sources/index.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
@@ -426,8 +452,8 @@ analysis or when specific processing steps need to be performed on the data.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -435,6 +461,7 @@ analysis or when specific processing steps need to be performed on the data.</p>
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="copyright">
     
       © Copyright 2023, Isaac Jaramillo, Caleb Wheeler.
@@ -444,8 +471,9 @@ analysis or when specific processing steps need to be performed on the data.</p>
 </div>
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>
@@ -453,10 +481,12 @@ analysis or when specific processing steps need to be performed on the data.</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
 </p></div>
       
     </div>

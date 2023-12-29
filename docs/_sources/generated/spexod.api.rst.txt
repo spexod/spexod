@@ -1,7 +1,7 @@
-﻿API
-===
+﻿spexod.api
+==========
 
-.. automodule:: API
+.. automodule:: spexod.api
 
    
    
