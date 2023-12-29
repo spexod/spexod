@@ -12,7 +12,14 @@ setup(name='spexod',
       author_email='chw3k5@gmail.com',
       packages=find_packages(),
       url="https://github.com/spexod/spexod",
-      install_requires=['numpy', 'astropy'],
+      install_requires=[
+            'numpy',
+            'astropy'
+            'requests',
+            'setuptools',
+            'pandas',
+            'plotly'
+        ],
       data_files=[('spexod', [md_fit_read_path])],
       include_package_data=True,
       )
