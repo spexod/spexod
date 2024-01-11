@@ -1,5 +1,5 @@
 # spexod
-Community tools for **SpExoDisks** (**Sp**ectroscopy  of **Exo**planet **Disks**) data
+Community tools for **SpExoDisks** (**Sp**ectroscopy  of **Exo**planet-forming **Disks**) data
 
 **SpExod** is a Python package that allows users to connect to the spexodisks.com API aims to provide users with a
 convenient and efficient way to access data from a particular source. It offers a set of functions and methods
@@ -146,7 +146,7 @@ From a terminal with the virtual environment activated, do:
 
 Packages can all be installed individually with `pip install <package_name>`
 
-## Install as Python Packaage
+## Install as Python Package
 If you are a user of the submm_python_routines but are unlikely modify (develop) 
 the code in this project, then it is recommended that you install the 
 `spexod` as a python package. This can be done within a
