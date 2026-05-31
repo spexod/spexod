@@ -5,18 +5,52 @@ This is meant to be an alternative to downloading data from SpExoDisks.com,
 instead this package will allow users to connect to the SpExoDisks database directly w/ Python.
 """
 import os
+import io
+import zipfile
+import requests
+from time import sleep
 from typing import List
 
-import io
 import pandas as pd
 import plotly.express as px
-import requests
-import zipfile
 
+max_retries = 5
+sleep_time_default = 10
 SERVER_URL = 'https://spexodisks.com/api/'
 
 
-def get_available_isotopologues() -> list:
+def throttled_response(url: str, retries: int = max_retries, params: dict | None = None, **kwargs) -> requests.Response:
+    sleep_time = None
+    try:
+        response = requests.get(url, params=params, **kwargs)
+    except requests.RequestException as e:
+        print(f"Error fetching response: {e}")
+        raise e
+    else:
+        status_code = response.status_code
+        if status_code == 200:
+            return response
+        elif retries < 1:
+            raise requests.RequestException(f"Error fetching response status_code: {status_code}")
+        else:
+            retries = retries - 1
+        if status_code == 429:
+            try:
+                sleep_time = int(response.json()['detail'].split('in')[1].split()[0]) + 1
+            except (ValueError, IndexError):
+                pass
+            else:
+                print(f"Too many requests, sleeping for {sleep_time} seconds to try again.")
+        else:
+            print(f"Error fetching response status_code: {status_code}, sleeping for {sleep_time} seconds to try again. {retries} retries left")
+        if sleep_time:
+            sleep(sleep_time)
+        else:
+            sleep(sleep_time_default)
+        return throttled_response(url=url, retries=retries)
+
+
+def get_available_isotopologues() -> list[dict]:
     """
     Returns a list of dictionaries of available isotopologues and their properties
 
@@ -25,16 +59,12 @@ def get_available_isotopologues() -> list:
     :exception: requests.RequestException
     """
     url = SERVER_URL + 'available_isotopologues/'
-    try:
-        response = requests.get(url)
-        response.raise_for_status()  # Raise an exception for non-2xx status codes
-        return response.json()
-    except requests.RequestException as e:
-        print(f"Error fetching isotopologues: {e}")
-        return None
+    response = throttled_response(url)
+    response.raise_for_status()  # Raise an exception for non-2xx status codes
+    return response.json()
 
 
-def get_params_and_units() -> list:
+def get_params_and_units() -> list[dict]:
     """
     Returns a list dictionaries of available parameters and units.
 
@@ -43,16 +73,12 @@ def get_params_and_units() -> list:
     :exception: requests.RequestException
     """
     url = SERVER_URL + 'available_params_and_units/'
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        print(f"Error fetching parameters and units: {e}")
-        return None
+    response = throttled_response(url)
+    response.raise_for_status()
+    return response.json()
 
 
-def get_curated() -> list:
+def get_curated() -> list[dict]:
     """
     Returns a list of dictionaries of ALL curated data and corresponding handles.
 
@@ -61,13 +87,9 @@ def get_curated() -> list:
     :exception: requests.RequestException
     """
     url = SERVER_URL + 'curated/'
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        print(f"Error fetching curated data: {e}")
-        return None
+    response = throttled_response(url)
+    response.raise_for_status()
+    return response.json()
 
 
 def get_spectra() -> list:
@@ -80,7 +102,7 @@ def get_spectra() -> list:
     """
     url = SERVER_URL + 'spectra/'
     try:
-        response = requests.get(url)
+        response = throttled_response(url)
         response.raise_for_status()
         return response.json()
     except requests.RequestException as e:
@@ -97,23 +119,19 @@ def get_star_aliases() -> list:
     :exception: requests.RequestException
     """
     url = SERVER_URL + 'objectnamealiases/'
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        print(f"Error fetching star aliases: {e}")
-        return None
+    response = throttled_response(url)
+    response.raise_for_status()
+    return response.json()
 
 
-def find_spectra_handle(alias=None) -> list:
+def find_spectra_handle(alias=None) -> str:
     """
     This function allows a user to find the spectra handle for a given star alias.
 
     :parameter alias: The alias of the star to search for
     :type alias: str
     :return: A dictionary of spectra associated with a given alias
-    :rtype: list[dict]
+    :rtype: str
     """
     aliases = get_star_aliases()
     aliases_and_handles = {}
@@ -123,8 +141,7 @@ def find_spectra_handle(alias=None) -> list:
         aliases_and_handles[i['alias'].lower().strip()] = i['spexodisks_handle'].lower().strip()
 
     if alias is None:
-        print("Please provide an object name to search for.")
-        return None
+        raise KeyError(f"Please provide an object name to search, {None} is not a valid alias.")
 
     alias = alias.lower().strip()
 
@@ -135,8 +152,8 @@ def find_spectra_handle(alias=None) -> list:
                   f"\nReturning first match: {possible_aliases[0]}.")
             return aliases_and_handles[possible_aliases[0]]
         else:
-            print(f"No matching aliases found for {alias}.")
-            return None
+            KeyError(f"No matching aliases found for {alias}.")
+
 
     return aliases_and_handles[alias]
 
@@ -189,13 +206,9 @@ def get_wavelengths(handle: str) -> list:
     :exception: requests.RequestException
     """
     url = SERVER_URL + handle.lower() + '/'
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.json()['wavelength_um']
-    except requests.RequestException as e:
-        print(f"Error fetching wavelengths for handle '{handle}': {e}")
-        return None
+    response = throttled_response(url)
+    response.raise_for_status()
+    return response.json()['wavelength_um']
 
 
 def get_fluxes(handle: str) -> tuple:
@@ -209,16 +222,12 @@ def get_fluxes(handle: str) -> tuple:
     :exception: requests.RequestException
     """
     url = SERVER_URL + handle.lower() + '/'
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        data = response.json()
-        fluxes = data.get('flux')
-        flux_errors = data.get('flux_error')
-        return fluxes, flux_errors
-    except requests.RequestException as e:
-        print(f"Error fetching fluxes for handle '{handle}': {e}")
-        return None, None
+    response = throttled_response(url)
+    response.raise_for_status()
+    data = response.json()
+    fluxes = data.get('flux')
+    flux_errors = data.get('flux_error')
+    return fluxes, flux_errors
 
 
 def get_stars_from_file(filename: str) -> list:
@@ -287,23 +296,22 @@ def login() -> dict:
     :rtype: dict
     :exception: requests.RequestException
     """
-    access = False
-    while not access:
+    for retries in range(max_retries, 0, -1):
         username = input("Please enter your username: ")
         password = input("Please enter your password: ")
         url = SERVER_URL + 'users/token/'
-        try:
-            response = requests.post(url, json={'email': username, 'password': password})
-            response.raise_for_status()
-            if response.status_code == 200:
-                print("Login successful.")
-                access = True
-                return response.json()
-            else:
-                print("Login failed. Please try again.")
-        except requests.RequestException as e:
-            print(f"Error during login: {e}")
-            return None
+        response = requests.post(url, json={'email': username, 'password': password})
+        response.raise_for_status()
+        if response.status_code == 200:
+            print("Login successful.")
+            return response.json()
+        elif retries > 0 :
+            print("Login failed. Please try again.")
+            sleep(5)
+        else:
+            raise RuntimeError(f"Login failed. response.status_code: {response.status_code}")
+    else:
+        raise RuntimeError(f"Login failed. response.status_code: {response.status_code}")
 
 
 def download_spectrum(spectra: List) -> None:
@@ -325,15 +333,12 @@ def download_spectrum(spectra: List) -> None:
 
     headers = {'Authorization': 'Bearer ' + access_token}
 
-    try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
+    response = throttled_response(url, headers=headers)
+    response.raise_for_status()
 
-        zip_file = zipfile.ZipFile(io.BytesIO(response.content))
-        zip_file.extractall("Spectra")
-        print("Spectra downloaded successfully.")
-    except requests.RequestException as e:
-        print(f"Error during spectrum download: {e}")
+    zip_file = zipfile.ZipFile(io.BytesIO(response.content))
+    zip_file.extractall("Spectra")
+    print("Spectra downloaded successfully.")
 
 
 def plot_spectra(wavelength, flux) -> None:
