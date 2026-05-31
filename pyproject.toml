@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spexod"
+version = "0.3.0"
+description = "Community tools for SpExoDisks (spexodisks.com)"
+authors = [
+    { name = "Isaac Jaramillo" },
+    { name = "Caleb Wheeler", email = "chw3k5@gmail.com" },
+]
+dependencies = [
+    "numpy",
+    "astropy",
+    "requests",
+    "setuptools",
+    "pandas",
+    "plotly",
+]
+
+[project.urls]
+Homepage = "https://github.com/spexod/spexod"
+
+[tool.setuptools.packages.find]
+
+[tool.setuptools.package-data]
+spexod = ["FITSREAD.md"]
